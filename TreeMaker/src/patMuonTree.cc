@@ -62,7 +62,6 @@ patMuonTree::Fill(const edm::Event& iEvent){
   if(FilteredVertexCollection.size()>0) vtx = FilteredVertexCollection[0];
   pv.SetXYZ(vtx.x(), vtx.y(), vtx.z());
 
-  const reco::Vertex& vertex = FilteredVertexCollection[0];
   // handle pfcandidates
   Handle<pat::PackedCandidateCollection> pfcands;
   iEvent.getByToken(pfCandToken, pfcands);
@@ -71,6 +70,8 @@ patMuonTree::Fill(const edm::Event& iEvent){
   iEvent.getByToken(rhoForLepToken,rhoH);
 
   pat::MuonCollection::const_iterator mu;
+
+  //const reco::Vertex& vertex = FilteredVertexCollection[0];
 
   for(mu=muColl.begin(); mu!=muColl.end(); mu++){
 
