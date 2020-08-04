@@ -103,4 +103,6 @@ python MultiCrab_2017MC.py --kill --crabdir=crab_MC_2017miniaodV2_V1
 
 ##Then run the test file by
 
-cmsRun treeMaker_2018_cfg.py
+cmsRun treeMaker_2018_cfg.py  runOn2018=1 runOnMC=1
+cmsRun treeMaker_2018_cfg.py  runOn2018=1 
+cmsRun treeMaker_2018_cfg.py  runOn2018=1 runOnMC=1
