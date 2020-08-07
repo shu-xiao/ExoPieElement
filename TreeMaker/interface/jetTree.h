@@ -10,6 +10,10 @@
   Date      : 27 Jan 2017
   Adding CA15 doble b-tagger
   ECF variables
+
+  Updated by: Shu-Xiao Liu
+  Date      : 06 Aug 2020
+  Add Particle Net tagger (Dummy)
 */
 
 
@@ -277,7 +281,9 @@ class jetTree  : public baseTree{
   std::vector<float> jet_prob_ZHccvsQCD_;
   std::vector<float> jet_prob_WvsQCD_;
   std::vector<float> jet_prob_ZHbbvsQCD_;
-  //std::vector<float> ;
+  
+  
+  std::vector<float> jet_particleNet_XbbvsQCD_;
   //std::vector<float> ;
   std::vector<float> jet_DoubleSV_;
 

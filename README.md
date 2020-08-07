@@ -15,11 +15,12 @@ now the setup works both in SLC6 and centos 7, You can login to slc6 using USERN
 ```
 Working on lxplus7
 
-##SCRAM ARCH SET for CMSSW_10_2_X
+## version of Particle Net
+## SCRAM ARCH SET for CMSSW_10_2_23
 
 export SCRAM_ARCH=slc7_amd64_gcc700
-cmsrel CMSSW_10_2_18
-cd CMSSW_10_2_18/src/
+cmsrel CMSSW_10_2_23
+cd CMSSW_10_2_23/src/
 
 cmsenv
 git cms-init
@@ -39,7 +40,7 @@ cd ExoPieElement/TreeMaker/test/
 
 ## before cmsRun do set the proxy. 
 voms-proxy-init -voms cms 
-cmsRun treeMaker_16_17_cfg.py
+cmsRun treeMaker_16_17_cfg.py runOn2017=1
 ```
 If the file doesn't work, instead of /tmp/khurana.... use filename, it will take some time to run via xrootd. 
 
@@ -103,6 +104,5 @@ python MultiCrab_2017MC.py --kill --crabdir=crab_MC_2017miniaodV2_V1
 
 ##Then run the test file by
 
-cmsRun treeMaker_2018_cfg.py  runOn2018=1 runOnMC=1
 cmsRun treeMaker_2018_cfg.py  runOn2018=1 
 cmsRun treeMaker_2018_cfg.py  runOn2018=1 runOnMC=1

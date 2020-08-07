@@ -712,6 +712,9 @@ jetTree::Fill(const edm::Event& iEvent, edm::EventSetup const& iSetup){
       jet_prob_WvsQCD_.push_back(jet->bDiscriminator("pfMassDecorrelatedDeepBoostedDiscriminatorsJetTags:WvsQCD"));
       jet_prob_ZHbbvsQCD_.push_back(jet->bDiscriminator("pfMassDecorrelatedDeepBoostedDiscriminatorsJetTags:ZHbbvsQCD"));
 
+      //jet_particleNet_XbbvsQCD_.push_back(jet->bDiscriminator("pfMassDecorrelatedParticleNetDiscriminatorsJetTags:XbbvsQCD"));
+      jet_particleNet_XbbvsQCD_.push_back(DUMMY);
+
 
       //jet__.push_back(jet->bDiscriminator(""));
 //
@@ -1041,6 +1044,8 @@ jetTree::SetBranches(){
       AddBranch(&jet_prob_ZHccvsQCD_, "jet_prob_ZHccvsQCD");
       AddBranch(&jet_prob_WvsQCD_, "jet_prob_WvsQCD");
       AddBranch(&jet_prob_ZHbbvsQCD_, "jet_prob_ZHbbvsQCD");
+      
+      AddBranch(&jet_particleNet_XbbvsQCD_, "jet_particleNet_XbbvsQCD");
     }
 
     AddBranch(&jetSDRawP4_, "jetSDRawP4");
@@ -1231,6 +1236,8 @@ jetTree::Clear(){
   jet_prob_ZHccvsQCD_.clear();
   jet_prob_WvsQCD_.clear();
   jet_prob_ZHbbvsQCD_.clear();
+  
+  jet_particleNet_XbbvsQCD_.clear();
 
 
   jet_DoubleSV_.clear();
