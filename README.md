@@ -1,4 +1,6 @@
-this branch is already good for 2017 analysis, 
+[![hackmd-github-sync-badge](https://hackmd.io/FrwoQbX5Q6uw2Jiil08X1g/badge)](https://hackmd.io/FrwoQbX5Q6uw2Jiil08X1g)
+
+this branch grew up from master branch and will be used for phase 2 study.
 
 
 
