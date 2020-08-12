@@ -11,11 +11,12 @@ now the setup works both in SLC6 and centos 7, You can login to slc6 using USERN
 
 **It is recomended to use centos 7**
 
-### Setup CMSSW
+## Setup CMSSW
+In the phase 2 study, the particle net variables are added in the nTuple. the particle net variables are named as FATjet_MXNet_*
 ```
-Working on lxplus7
+## Working on lxplus7
 
-## version of Particle Net
+## Version of Particle Net support
 ## SCRAM ARCH SET for CMSSW_10_2_23
 
 export SCRAM_ARCH=slc7_amd64_gcc700
@@ -35,13 +36,25 @@ scram b -j 4
 git clone git@github.com:cms-jet/JetToolbox.git JMEAnalysis/JetToolbox -b jetToolbox_102X
 
 scram b -j 4
+```
 
+
+## Local Test
+```
+
+voms-proxy-init -voms cms 
 cd ExoPieElement/TreeMaker/test/
 
-## before cmsRun do set the proxy. 
-voms-proxy-init -voms cms 
-cmsRun treeMaker_16_17_cfg.py runOn2017=1
+##Then run the test file and produce output file, ExoPieElementTuples.root
+cmsRun treeMaker_2018_cfg.py runOn2018=1
+
+## list all particle net varialbes
+root -l ExoPieElementTuples.root
+> tree->cd()
+> treeMaker->Print("*Net*")
 ```
+
+
 If the file doesn't work, instead of /tmp/khurana.... use filename, it will take some time to run via xrootd. 
 
 you have to change the line 
@@ -51,7 +64,6 @@ fileNames = cms.untracked.vstring("file:/tmp/khurana/temp2017.root"),
 by
 
 fileNames = cms.untracked.vstring(testFile),
-
 
 ## for crab submission 
 
@@ -99,10 +111,3 @@ for crab kill:
 python MultiCrab_2017MC.py --kill --crabdir=crab_MC_2017miniaodV2_V1
 
 
-
-## before cmsRun set the proxy
-
-##Then run the test file by
-
-cmsRun treeMaker_2018_cfg.py  runOn2018=1 
-cmsRun treeMaker_2018_cfg.py  runOn2018=1 runOnMC=1
