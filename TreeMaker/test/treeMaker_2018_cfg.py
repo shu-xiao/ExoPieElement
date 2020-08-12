@@ -179,6 +179,19 @@ updateJetCollection(
       'pfMassDecorrelatedDeepBoostedDiscriminatorsJetTags:ZHccvsQCD',
       'pfMassDecorrelatedDeepBoostedDiscriminatorsJetTags:WvsQCD',
       'pfMassDecorrelatedDeepBoostedDiscriminatorsJetTags:ZHbbvsQCD',
+
+      ## particle net
+      'pfMassDecorrelatedParticleNetJetTags:probXqq',
+      'pfMassDecorrelatedParticleNetJetTags:probXcc',
+      'pfMassDecorrelatedParticleNetJetTags:probQCDcc',
+      'pfMassDecorrelatedParticleNetJetTags:probQCDc',
+      'pfMassDecorrelatedParticleNetJetTags:probQCDb',
+      'pfMassDecorrelatedParticleNetJetTags:probQCDothers',
+      'pfMassDecorrelatedParticleNetJetTags:probXbb',
+      'pfMassDecorrelatedParticleNetJetTags:probQCDbb',
+      'pfMassDecorrelatedParticleNetDiscriminatorsJetTags:XqqvsQCD',
+      'pfMassDecorrelatedParticleNetDiscriminatorsJetTags:XccvsQCD',
+      'pfMassDecorrelatedParticleNetDiscriminatorsJetTags:XbbvsQCD',
       ]
         )
 ##
