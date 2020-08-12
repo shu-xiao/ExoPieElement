@@ -282,16 +282,43 @@ class jetTree  : public baseTree{
   std::vector<float> jet_prob_WvsQCD_;
   std::vector<float> jet_prob_ZHbbvsQCD_;
   
-  
-  std::vector<float> jet_particleNet_XbbvsQCD_;
   //std::vector<float> ;
   std::vector<float> jet_DoubleSV_;
+  
+  // particle net
+  
+  std::vector<float> jet_MXNet_XbbvsQCD_;
+  std::vector<float> jet_MXNet_XccvsQCD_;
+  std::vector<float> jet_MXNet_XqqvsQCD_;
+  
+  std::vector<float> jet_MXNet_Xqq_;
+  std::vector<float> jet_MXNet_Xcc_;
+  std::vector<float> jet_MXNet_Xbb_;
+  std::vector<float> jet_MXNet_QCDc_;
+  std::vector<float> jet_MXNet_QCDcc_;
+  std::vector<float> jet_MXNet_QCDb_;
+  std::vector<float> jet_MXNet_QCDbb_;
+  std::vector<float> jet_MXNet_QCDothers_;
 
   //jet secondary vtx
 
   std::vector<int>   jet_nSV_;
   std::vector<std::vector<float> > jet_SVMass_;
   std::vector<std::vector<float> > jet_SVEnergyRatio_;
+
+  /*
+   * pfMassDecorrelatedParticleNetJetTags:probXqq
+   * pfMassDecorrelatedParticleNetJetTags:probXcc
+   * pfMassDecorrelatedParticleNetJetTags:probQCDcc
+   * pfMassDecorrelatedParticleNetJetTags:probQCDc
+   * pfMassDecorrelatedParticleNetJetTags:probQCDb
+   * pfMassDecorrelatedParticleNetJetTags:probQCDothers
+   * pfMassDecorrelatedParticleNetJetTags:probXbb
+   * pfMassDecorrelatedParticleNetJetTags:probQCDbb 
+   * pfMassDecorrelatedParticleNetDiscriminatorsJetTags:XqqvsQCD
+   * pfMassDecorrelatedParticleNetDiscriminatorsJetTags:XccvsQCD
+   * pfMassDecorrelatedParticleNetDiscriminatorsJetTags:XbbvsQCD
+   */
 
 
 

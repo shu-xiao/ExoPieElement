@@ -712,9 +712,21 @@ jetTree::Fill(const edm::Event& iEvent, edm::EventSetup const& iSetup){
       jet_prob_WvsQCD_.push_back(jet->bDiscriminator("pfMassDecorrelatedDeepBoostedDiscriminatorsJetTags:WvsQCD"));
       jet_prob_ZHbbvsQCD_.push_back(jet->bDiscriminator("pfMassDecorrelatedDeepBoostedDiscriminatorsJetTags:ZHbbvsQCD"));
 
-      //jet_particleNet_XbbvsQCD_.push_back(jet->bDiscriminator("pfMassDecorrelatedParticleNetDiscriminatorsJetTags:XbbvsQCD"));
-      jet_particleNet_XbbvsQCD_.push_back(DUMMY);
+      // particle net
 
+      jet_MXNet_XbbvsQCD_.push_back(jet->bDiscriminator("pfMassDecorrelatedParticleNetDiscriminatorsJetTags:XbbvsQCD"));
+      jet_MXNet_XccvsQCD_.push_back(jet->bDiscriminator("pfMassDecorrelatedParticleNetDiscriminatorsJetTags:XccvsQCD"));
+      jet_MXNet_XqqvsQCD_.push_back(jet->bDiscriminator("pfMassDecorrelatedParticleNetDiscriminatorsJetTags:XqqvsQCD"));
+      //jet_MXNet_XbbvsQCD_.push_back(DUMMY);
+
+      jet_MXNet_Xqq_.push_back(jet->bDiscriminator("pfMassDecorrelatedParticleNetJetTags:probXqq"));
+      jet_MXNet_Xcc_.push_back(jet->bDiscriminator("pfMassDecorrelatedParticleNetJetTags:probXcc"));
+      jet_MXNet_Xbb_.push_back(jet->bDiscriminator("pfMassDecorrelatedParticleNetJetTags:probXbb"));
+      jet_MXNet_QCDc_.push_back(jet->bDiscriminator("pfMassDecorrelatedParticleNetJetTags:probQCDc"));
+      jet_MXNet_QCDcc_.push_back(jet->bDiscriminator("pfMassDecorrelatedParticleNetJetTags:probQCDcc"));
+      jet_MXNet_QCDb_.push_back(jet->bDiscriminator("pfMassDecorrelatedParticleNetJetTags:probQCDb"));
+      jet_MXNet_QCDbb_.push_back(jet->bDiscriminator("pfMassDecorrelatedParticleNetJetTags:probQCDbb"));
+      jet_MXNet_QCDothers_.push_back(jet->bDiscriminator("pfMassDecorrelatedParticleNetJetTags:probQCDothers"));
 
       //jet__.push_back(jet->bDiscriminator(""));
 //
@@ -1045,7 +1057,19 @@ jetTree::SetBranches(){
       AddBranch(&jet_prob_WvsQCD_, "jet_prob_WvsQCD");
       AddBranch(&jet_prob_ZHbbvsQCD_, "jet_prob_ZHbbvsQCD");
       
-      AddBranch(&jet_particleNet_XbbvsQCD_, "jet_particleNet_XbbvsQCD");
+      AddBranch(&jet_MXNet_XbbvsQCD_, "jet_MXNet_XbbvsQCD");
+      AddBranch(&jet_MXNet_XccvsQCD_, "jet_MXNet_XccvsQCD");
+      AddBranch(&jet_MXNet_XqqvsQCD_, "jet_MXNet_XqqvsQCD");
+
+      AddBranch(&jet_MXNet_Xqq_, "jet_MXNet_Xqq");
+      AddBranch(&jet_MXNet_Xcc_, "jet_MXNet_Xcc");
+      AddBranch(&jet_MXNet_Xbb_, "jet_MXNet_Xbb");
+      AddBranch(&jet_MXNet_QCDc_, "jet_MXNet_QCDc");
+      AddBranch(&jet_MXNet_QCDcc_, "jet_MXNet_QCDcc");
+      AddBranch(&jet_MXNet_QCDb_, "jet_MXNet_QCDb");
+      AddBranch(&jet_MXNet_QCDbb_, "jet_MXNet_QCDbb");
+      AddBranch(&jet_MXNet_QCDothers_, "jet_MXNet_QCDothers");
+
     }
 
     AddBranch(&jetSDRawP4_, "jetSDRawP4");
@@ -1237,7 +1261,19 @@ jetTree::Clear(){
   jet_prob_WvsQCD_.clear();
   jet_prob_ZHbbvsQCD_.clear();
   
-  jet_particleNet_XbbvsQCD_.clear();
+  // particle net
+
+  jet_MXNet_XbbvsQCD_.clear();
+  jet_MXNet_XccvsQCD_.clear();
+  jet_MXNet_XqqvsQCD_.clear();
+  jet_MXNet_Xqq_.clear();
+  jet_MXNet_Xcc_.clear();
+  jet_MXNet_Xbb_.clear();
+  jet_MXNet_QCDc_.clear();
+  jet_MXNet_QCDcc_.clear();
+  jet_MXNet_QCDb_.clear();
+  jet_MXNet_QCDbb_.clear();
+  jet_MXNet_QCDothers_.clear();
 
 
   jet_DoubleSV_.clear();
